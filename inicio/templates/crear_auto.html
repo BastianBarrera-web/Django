@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+        <a href={% url "inicio" %}>Inicio</a>
+        <a href={% url "crear_auto" %}>Crear Auto</a>
+        <a href={% url "listado_de_autos" %}>Listado de Autos</a>
+    </nav>
+
+    <form action="" method="post">
+        {% csrf_token %}    <!--sirve para identificar el formulario que se envia-->
+
+        {{formulario}}
+
+        <input type="submit" value="crear">
+
+
+    </form>
+    
+</body>
+</html>
