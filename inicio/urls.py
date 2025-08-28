@@ -1,9 +1,9 @@
 
 from django.urls import path
-from inicio.views import inicio, crear_auto, listado_de_autos
+from inicio.views import inicio, crear_libro, listado_de_libros
 
 urlpatterns = [
     path("inicio/", inicio, name="inicio"),
-    path("autos/crear/", crear_auto, name="crear_auto"),
-    path("autos/", listado_de_autos, name="listado_de_autos"),
+    path("libros/crear/", crear_libro, name="crear_libro"),
+    path("libros/", listado_de_libros, name="listado_de_libros"),
 ]
