@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <nav>
-        <a href={% url "inicio" %}>Inicio</a>
-        <a href={% url "crear_libro" %}>Crear Libro</a>
-        <a href={% url "listado_de_libros" %}>Listado de Libros</a>
-    </nav>
+{% block texto_h1 %} Crear Libro {% endblock texto_h1 %}
+
+{% block contenido %}
 
     <form action="" method="post">
         {% csrf_token %}    <!--sirve para identificar el formulario que se envia-->
@@ -20,8 +11,8 @@
 
         <input type="submit" value="crear">
 
-
     </form>
     
-</body>
-</html>
+{% endblock contenido %}
+ 
+    

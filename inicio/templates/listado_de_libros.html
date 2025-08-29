@@ -1,31 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <nav>
-        <a href={% url "inicio" %}>Inicio</a>
-        <a href={% url "crear_libro" %}>Crear Libro</a>
-        <a href={% url "listado_de_libros" %}>Listado de Libros</a>
-    </nav>
+    {% block texto_h1 %} Listado de Libros {% endblock texto_h1 %} 
 
-    <h1>Listado de Libros</h1>
+    {% block contenido %}
 
-    {% if libros %}
-    <ul>
-        {% for libro in libros %}
-        <li>{{libro}}</li>
-        {% endfor %}
-    </ul>
+        {% if libros %}
+            <ul>
+                {% for libro in libros %}
+                    <li>{{libro}}</li>
+                {% endfor %}
+            </ul>
 
-    {% else %}
-    <p>No hay datos</p>
+        {% else %}
+            <p>No hay datos</p>
         
-    {% endif %}
-
-</body>
-</html>
+        {% endif %}
+        
+    {% endblock contenido %}
