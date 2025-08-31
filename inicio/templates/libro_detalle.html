@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block texto_h1 %} Libro: {{libro}} {% endblock texto_h1 %}
+
+{% block contenido %}
+
+<ul>
+    <li>Titulo: {{libro.titulo}}</li>
+    <li>Autor: {{libro.autor}}</li>
+</ul>
+    
+{% endblock contenido %}

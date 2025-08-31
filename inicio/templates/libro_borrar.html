@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 
-{% block texto_h1 %} Crear Libro {% endblock texto_h1 %}
+{% block texto_h1 %} Borrar Libro {% endblock texto_h1 %}
 
 {% block contenido %}
 
     <form action="" method="post">
         {% csrf_token %}    <!--sirve para identificar el formulario que se envia-->
 
-        {{formulario}}
+        <p>
+            ¿Desea eliminar el libro {{libro}}?
+        </p>
 
-        <input type="submit" value="crear">
+        <input type="submit" value="confirmar">
 
     </form>
     

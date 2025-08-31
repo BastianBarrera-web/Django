@@ -4,10 +4,25 @@
 
     {% block contenido %}
 
-        {% if libros %}
+        <form action="" method="get">
+
+            {{formulario}}
+
+            <input type="submit" value="buscar">
+
+        </form>
+
+
+        {% if libros_buscados %}
             <ul>
-                {% for libro in libros %}
-                    <li>{{libro}}</li>
+                {% for libro in libros_buscados %}
+                    <li>
+                        {{libro}}
+                        <a href={% url 'libro_detalle' libro.id %}>Detalle</a>
+                        <a href={% url 'libro_actualizar' libro.id %}>Actualizar</a>
+                        <a href={% url 'libro_borrar' libro.id %}>Borrar</a>
+
+                    </li>
                 {% endfor %}
             </ul>
 

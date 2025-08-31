@@ -11,6 +11,13 @@
         <a href={% url "inicio" %}>Inicio</a>
         <a href={% url "crear_libro" %}>Crear Libro</a>
         <a href={% url "listado_de_libros" %}>Listado de Libros</a>
+        <a href={% url "iniciar_sesion" %}>Iniciar Sesion</a>
+        <form action={% url 'cerrar_sesion' %} method="POST">
+        {% csrf_token %}
+
+        <input type="submit" value="Cerrar Sesion">
+        </form>
+
     </nav>
 
     <h1>{% block texto_h1 %} h1 De Base{% endblock texto_h1 %}</h1>
