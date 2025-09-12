@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block texto_h1 %} Registro {% endblock texto_h1 %}
+
+{% block contenido %}
+
+    <form action="{% url 'registro' %}" method="post">
+        {% csrf_token %}    <!--sirve para identificar el formulario que se envia-->
+
+        {{formulario}}
+
+        <input type="submit" value="Registrarse">
+
+    </form>
+    
+{% endblock contenido %}

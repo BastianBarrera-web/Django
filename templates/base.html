@@ -11,12 +11,21 @@
         <a href={% url "inicio" %}>Inicio</a>
         <a href={% url "crear_libro" %}>Crear Libro</a>
         <a href={% url "listado_de_libros" %}>Listado de Libros</a>
-        <a href={% url "iniciar_sesion" %}>Iniciar Sesion</a>
+
+        {% if request.user.is_authenticated %}
+
         <form action={% url 'cerrar_sesion' %} method="POST">
         {% csrf_token %}
 
         <input type="submit" value="Cerrar Sesion">
         </form>
+
+        {% else %}
+
+        <a href={% url "iniciar_sesion" %}>Iniciar Sesion</a>
+        <a href={% url "registro" %}>Registrarse</a>
+            
+        {% endif %}
 
     </nav>
 
